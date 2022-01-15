@@ -3,7 +3,7 @@ console.log('***** Music Collection *****')
 let collection = [];
 
 function addToCollection(title1, artist1, yearPublished1) {
-  console.log('Inside addToCollection Function');
+  // console.log('Inside addToCollection Function');
   let record = {
     title: title1,
     artist: artist1,
@@ -11,8 +11,18 @@ function addToCollection(title1, artist1, yearPublished1) {
   };
   collection.push(record);
   return record;
+  // This return doesn't work and i'm not sure why
 }
+// End addToCollection function
 
-addToCollection('Let it Be','The Beatles','1969');
+addToCollection('Let it Be','The Beatles','1970');
+
+console.log(collection);
+
+addToCollection('Homework','Daft Punk','2001');
+addToCollection('Bubba','Kaytranada','2019');
+addToCollection('Random Access Memories','Daft Punk','2013');
+addToCollection('The New Abnormal','The Strokes','2020');
+addToCollection('Future Nostalgia','Dua Lipa','2020');
 
 console.log(collection);
