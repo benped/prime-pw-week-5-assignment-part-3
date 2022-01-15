@@ -20,9 +20,18 @@ function showCollection(array) {
   console.log(x);
   for ( let i of array) {
     console.log(`${i.title} by ${i.artist} published in ${i.yearPublished}`);
-
   }
-  // return true;
+}
+
+function findByArtist(artist) {
+  let artistList = [];
+  for (let i of collection) {
+    if (i.artist === artist){
+      // console.log(i.artist);
+      artistList.push(i);
+    }
+  }
+  console.log(artistList);
 }
 
 addToCollection('Let it Be','The Beatles','1970');
@@ -38,3 +47,7 @@ addToCollection('Future Nostalgia','Dua Lipa','2020');
 console.log(collection);
 
 console.log(showCollection(collection));
+
+// findByArtistTest
+findByArtist('Daft Punk');
+findByArtist('Metallica');
