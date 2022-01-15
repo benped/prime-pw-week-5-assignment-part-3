@@ -9,10 +9,10 @@ function addToCollection(title1, artist1, yearPublished1) {
     artist: artist1,
     yearPublished: yearPublished1,
   };
-  collection += record;
+  collection.push(record);
   return record;
 }
 
 addToCollection('Let it Be','The Beatles','1969');
 
-console.log
+console.log(collection);
