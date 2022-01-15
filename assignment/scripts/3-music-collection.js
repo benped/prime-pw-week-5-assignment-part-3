@@ -15,6 +15,16 @@ function addToCollection(title1, artist1, yearPublished1) {
 }
 // End addToCollection function
 
+function showCollection(array) {
+  let x = array.length;
+  console.log(x);
+  for ( let i of array) {
+    console.log(`${i.title} by ${i.artist} published in ${i.yearPublished}`);
+
+  }
+  // return true;
+}
+
 addToCollection('Let it Be','The Beatles','1970');
 
 console.log(collection);
@@ -26,3 +36,5 @@ addToCollection('The New Abnormal','The Strokes','2020');
 addToCollection('Future Nostalgia','Dua Lipa','2020');
 
 console.log(collection);
+
+console.log(showCollection(collection));
