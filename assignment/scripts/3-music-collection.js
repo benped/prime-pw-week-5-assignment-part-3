@@ -31,8 +31,34 @@ function findByArtist(artist) {
       artistList.push(i);
     }
   }
-  console.log(artistList);
+  return artistList;
 }
+
+let searchObject0 = {
+  artist: 'Ray Charles',
+  yearPublished: '1957',
+}
+
+let searchObject1 = {
+  artist: 'Daft Punk',
+  yearPublished: '2001',
+}
+
+function search(sInput){
+  let searchArray = [];
+  if (sInput == null){
+    return collection;
+  }
+  for (let i of collection){
+    if (i.artist === sInput.artist || i.yearPublished === sInput.yearPublished) {
+      searchArray.push(i);
+    }
+
+  }
+
+  return searchArray;
+}
+
 
 addToCollection('Let it Be','The Beatles','1970');
 
@@ -49,5 +75,9 @@ console.log(collection);
 console.log(showCollection(collection));
 
 // findByArtistTest
-findByArtist('Daft Punk');
-findByArtist('Metallica');
+console.log('Looking for anything by Daft Punk', findByArtist('Daft Punk'));
+console.log('Looking for anything by Metallica', findByArtist('Metallica'));
+
+console.log('Searching collection for Ray Charles 1957', search(searchObject0));
+console.log('Searching collection for Daft Punk 2001',search(searchObject1));
+console.log('Searching for nothing in particular',search());
