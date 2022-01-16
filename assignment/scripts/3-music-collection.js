@@ -18,7 +18,7 @@ function addToCollection(title, artist, yearPublished, ...tracks) {
 
 function trackBuilder(name, duration){
   let track = {
-    name: name,
+    trackName: name,
     duration: duration,
   }
   return track;
@@ -55,29 +55,46 @@ let searchObject0 = {
 let searchObject1 = {
   artist: 'Daft Punk',
   yearPublished: '2001',
+  trackName: 'trackname1',
 }
 
 function search(sInput){
+
   let searchArray = [];
+
   if (sInput == null){
     return collection;
   }
+
   for (let i of collection){
-    if (i.artist === sInput.artist || i.yearPublished === sInput.yearPublished) {
+    let trackMatch = false;
+    // console.log(i.tracks);
+    for (let ii of i.tracks){
+      // console.log(ii);
+      if (ii.trackName === sInput.trackName){
+        trackMatch = true;
+      }
+    }
+    if (i.artist === sInput.artist || i.yearPublished === sInput.yearPublished ||
+    trackMatch) {
       searchArray.push(i);
     }
 
+    }
+    return searchArray;
   }
 
-  return searchArray;
-}
+
+
 
 
 addToCollection('Let it Be','The Beatles','1970');
 
 console.log(collection);
 
-addToCollection('Homework','Daft Punk','2001');
+addToCollection('Homework','Daft Punk','2001',trackBuilder('trackname1','t2'),trackBuilder('trackname3','t4'));
+// console.log(collection[1]);
+// rest parameter test
 addToCollection('Bubba','Kaytranada','2019');
 addToCollection('Random Access Memories','Daft Punk','2013');
 addToCollection('The New Abnormal','The Strokes','2020');
