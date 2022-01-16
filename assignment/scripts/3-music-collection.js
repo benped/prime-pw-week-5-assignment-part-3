@@ -2,12 +2,13 @@ console.log('***** Music Collection *****')
 
 let collection = [];
 
-function addToCollection(title1, artist1, yearPublished1) {
+function addToCollection(title, artist, yearPublished, tracks) {
   // console.log('Inside addToCollection Function');
   let record = {
-    title: title1,
-    artist: artist1,
-    yearPublished: yearPublished1,
+    title: title,
+    artist: artist,
+    yearPublished: yearPublished,
+    tracks: tracks,
   };
   collection.push(record);
   return record;
@@ -15,13 +16,25 @@ function addToCollection(title1, artist1, yearPublished1) {
 }
 // End addToCollection function
 
+function trackBuilder(name, duration){
+  let track = {
+    name: name,
+    duration: duration,
+  }
+  return track;
+}
+
+// console.log('Trackbuilder test:',trackBuilder('Test','Time'));
+
+
+
 function showCollection(array) {
-  let x = array.length;
-  console.log(x);
+  console.log(array.length);
   for ( let i of array) {
     console.log(`${i.title} by ${i.artist} published in ${i.yearPublished}`);
   }
 }
+
 
 function findByArtist(artist) {
   let artistList = [];
