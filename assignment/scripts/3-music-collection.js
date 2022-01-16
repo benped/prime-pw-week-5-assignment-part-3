@@ -2,7 +2,7 @@ console.log('***** Music Collection *****')
 
 let collection = [];
 
-function addToCollection(title, artist, yearPublished, tracks) {
+function addToCollection(title, artist, yearPublished, ...tracks) {
   // console.log('Inside addToCollection Function');
   let record = {
     title: title,
