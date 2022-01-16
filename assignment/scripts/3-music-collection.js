@@ -31,7 +31,7 @@ function showCollection(array) {
   for (let i of array) {
     console.log(`${i.title} by ${i.artist} published in ${i.yearPublished}`);
     let lead = 1;
-    for (let ii of i.tracks){
+    for (let ii of i.tracks) {
       console.log(`${lead}. ${ii.trackName} : ${ii.duration}`)
       lead++;
     }
@@ -105,7 +105,7 @@ addToCollection('Let it Be', 'The Beatles', '1970');
 
 console.log(collection);
 
-addToCollection('Homework', 'Daft Punk', '2001', trackBuilder('Da Funk', '5:28'),trackBuilder('Around the World', '7:09'));
+addToCollection('Homework', 'Daft Punk', '2001', trackBuilder('Da Funk', '5:28'), trackBuilder('Around the World', '7:09'));
 // console.log(collection[1]);
 // rest parameter test
 addToCollection('Bubba', 'Kaytranada', '2019');
