@@ -47,16 +47,7 @@ function findByArtist(artist) {
   return artistList;
 }
 
-let searchObject0 = {
-  artist: 'Ray Charles',
-  yearPublished: '1957',
-}
 
-let searchObject1 = {
-  artist: 'Daft Punk',
-  yearPublished: '2001',
-  trackName: 'trackname1',
-}
 
 function search(sInput){
 
@@ -86,19 +77,38 @@ function search(sInput){
 
 
 
+  let searchObject0 = {
+    artist: 'Ray Charles',
+    yearPublished: '1957',
+  }
+
+  let searchObject1 = {
+    artist: 'Daft Punk',
+    yearPublished: '2001',
+    trackName: 'Da Funk',
+  }
+
+  let searchObject2 = {
+    trackName: 'Love Again'
+  }
+
+  let searchObject3 = {
+    trackName: 'Ode to the Mets',
+  }
+
 
 
 addToCollection('Let it Be','The Beatles','1970');
 
 console.log(collection);
 
-addToCollection('Homework','Daft Punk','2001',trackBuilder('trackname1','t2'),trackBuilder('trackname3','t4'));
+addToCollection('Homework','Daft Punk','2001',trackBuilder('Da Funk','5:28'),trackBuilder('Around the World','7:09'));
 // console.log(collection[1]);
 // rest parameter test
 addToCollection('Bubba','Kaytranada','2019');
 addToCollection('Random Access Memories','Daft Punk','2013');
-addToCollection('The New Abnormal','The Strokes','2020');
-addToCollection('Future Nostalgia','Dua Lipa','2020');
+addToCollection('The New Abnormal','The Strokes','2020', trackBuilder('Ode to the Mets','5:51'));
+addToCollection('Future Nostalgia','Dua Lipa','2020',trackBuilder("Don't Start Now",'3:03'),trackBuilder('Love Again','4:18'),trackBuilder('Levitating','3:23'));
 
 console.log(collection);
 
@@ -111,3 +121,5 @@ console.log('Looking for anything by Metallica', findByArtist('Metallica'));
 console.log('Searching collection for Ray Charles 1957', search(searchObject0));
 console.log('Searching collection for Daft Punk 2001',search(searchObject1));
 console.log('Searching for nothing in particular',search());
+console.log("I'm looking for an album with the song Ode to the Mets", search(searchObject3));
+console.log("I'm looking for an album with the song Love Again", search(searchObject2));
